@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cphio4kldfdw2"]
+
+[node name="Doorways" type="Node3D"]
+
+[node name="Front Door" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Front Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+size = Vector3(1.5, 2, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Front Door"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+radius = 0.75
+height = 1.0
+sides = 64
+
+[node name="B-Doors" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 2.08165e-12)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.08165e-12, 2.08165e-12)
+operation = 2
+size = Vector3(1, 2, 1)

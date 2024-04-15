@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://ywu40s0uwggr"]
+
+[ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="1_ou62e"]
+
+[node name="Freeman Hall" type="Node3D"]
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.25, 0.001)
+use_collision = true
+size = Vector3(1000, 0.5, 1000)
+
+[node name="Front Door" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 6, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Front Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+operation = 2
+use_collision = true
+size = Vector3(1.5, 2, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Front Door"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+operation = 2
+use_collision = true
+radius = 0.75
+height = 1.0
+sides = 64
+
+[node name="B-Doors" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 10, -9, 13)
+
+[node name="L1" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 2.08165e-12)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="L2" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.08165e-12, 2.08165e-12)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="R1" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 10, 26, 0)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="R2" type="CSGBox3D" parent="B-Doors"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 11, 26, 3.8147e-06)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="C-Floor1" type="Node3D" parent="."]
+
+[node name="Entrance" type="CSGBox3D" parent="C-Floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.5, 2.08165e-12)
+flip_faces = true
+size = Vector3(20, 5, 29)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="C-Floor1/Entrance"]
+operation = 2
+size = Vector3(19, 4, 28)
+
+[node name="C-Floor2" type="Node3D" parent="."]
+
+[node name="Entrance" type="CSGBox3D" parent="C-Floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7.5, 2.08165e-12)
+flip_faces = true
+size = Vector3(20, 5, 29)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="C-Floor2/Entrance"]
+operation = 2
+size = Vector3(19, 4, 28)
+
+[node name="C-Floor 3" type="Node3D" parent="."]
+
+[node name="Entrance" type="CSGBox3D" parent="C-Floor 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 12.5, 2.08165e-12)
+flip_faces = true
+size = Vector3(20, 5, 29)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="C-Floor 3/Entrance"]
+operation = 2
+size = Vector3(19, 4, 28)
+
+[node name="C-Floor4" type="Node3D" parent="."]
+
+[node name="Entrance" type="CSGBox3D" parent="C-Floor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 17.5, 2.08165e-12)
+flip_faces = true
+size = Vector3(20, 5, 29)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="C-Floor4/Entrance"]
+operation = 2
+size = Vector3(19, 4, 28)
+
+[node name="L-Hall E" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="L-Hall E"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 21)
+flip_faces = true
+size = Vector3(23, 15, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="L-Hall E/CSGBox3D"]
+operation = 2
+size = Vector3(22, 14, 12)
+
+[node name="L-Hall W" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="L-Hall W"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -22)
+flip_faces = true
+size = Vector3(20, 13, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="L-Hall W/CSGBox3D"]
+operation = 2
+size = Vector3(19, 12, 12)
+
+[node name="Player" parent="." instance=ExtResource("1_ou62e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.945098, 0.945098, 0.807843, 1)
+shadow_enabled = true
