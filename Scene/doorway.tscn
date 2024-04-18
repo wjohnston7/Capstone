@@ -19,7 +19,7 @@ sides = 64
 [node name="CSGBox3D" type="CSGBox3D" parent="B-Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 2.08165e-12)
 operation = 2
-size = Vector3(1, 2, 1)
+size = Vector3(2, 2, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="B-Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.08165e-12, 2.08165e-12)
