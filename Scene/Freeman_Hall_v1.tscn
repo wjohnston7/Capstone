@@ -177,6 +177,69 @@ gi_mode = 0
 operation = 2
 size = Vector3(2, 4.5, 1)
 
+[node name="OmniLight3D" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 12)
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 8)
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 4)
+
+[node name="OmniLight3D4" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D5" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -4)
+
+[node name="OmniLight3D6" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -8)
+
+[node name="OmniLight3D7" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -12)
+
+[node name="OmniLight3D8" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 12)
+
+[node name="OmniLight3D9" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 8)
+
+[node name="OmniLight3D10" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 4)
+
+[node name="OmniLight3D11" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D12" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -4)
+
+[node name="OmniLight3D13" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -8)
+
+[node name="OmniLight3D14" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -12)
+
+[node name="OmniLight3D15" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 12)
+
+[node name="OmniLight3D16" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 8)
+
+[node name="OmniLight3D17" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 4)
+
+[node name="OmniLight3D18" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D19" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -4)
+
+[node name="OmniLight3D20" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -8)
+
+[node name="OmniLight3D21" type="SpotLight3D" parent="Floor 2/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -12)
+
 [node name="Ramp" type="CSGPolygon3D" parent="Floor 2"]
 transform = Transform3D(9.78432, -4.22886e-07, 1.08652e-14, -8.55373e-07, -4.83725, 4.94603e-07, -3.73895e-14, -4.22886e-07, -5.6576, 9.65347, -2.07901, -17)
 use_collision = true
@@ -211,6 +274,69 @@ gi_mode = 0
 operation = 2
 size = Vector3(2, 4.5, 1)
 
+[node name="OmniLight3D" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 12)
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 8)
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 4)
+
+[node name="OmniLight3D4" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D5" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -4)
+
+[node name="OmniLight3D6" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -8)
+
+[node name="OmniLight3D7" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -12)
+
+[node name="OmniLight3D8" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 12)
+
+[node name="OmniLight3D9" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 8)
+
+[node name="OmniLight3D10" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 4)
+
+[node name="OmniLight3D11" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D12" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -4)
+
+[node name="OmniLight3D13" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -8)
+
+[node name="OmniLight3D14" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -12)
+
+[node name="OmniLight3D15" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 12)
+
+[node name="OmniLight3D16" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 8)
+
+[node name="OmniLight3D17" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 4)
+
+[node name="OmniLight3D18" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D19" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -4)
+
+[node name="OmniLight3D20" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -8)
+
+[node name="OmniLight3D21" type="SpotLight3D" parent="Floor 3/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -12)
+
 [node name="Floor 4" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 13)
 use_collision = true
@@ -234,8 +360,72 @@ size = Vector3(1, 4, 28)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, -14)
 size = Vector3(19, 1, 28)
 
+[node name="OmniLight3D" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 12)
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 8)
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 4)
+
+[node name="OmniLight3D4" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D5" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -4)
+
+[node name="OmniLight3D6" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -8)
+
+[node name="OmniLight3D7" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -12)
+
+[node name="OmniLight3D8" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 12)
+
+[node name="OmniLight3D9" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 8)
+
+[node name="OmniLight3D10" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 4)
+
+[node name="OmniLight3D11" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D12" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -4)
+
+[node name="OmniLight3D13" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -8)
+
+[node name="OmniLight3D14" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -12)
+
+[node name="OmniLight3D15" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 12)
+
+[node name="OmniLight3D16" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 8)
+
+[node name="OmniLight3D17" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 4)
+
+[node name="OmniLight3D18" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 2.08165e-12)
+
+[node name="OmniLight3D19" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -4)
+
+[node name="OmniLight3D20" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -8)
+
+[node name="OmniLight3D21" type="SpotLight3D" parent="Floor 4/Floor"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -12)
+
 [node name="West Hall" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 14)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="West Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.08165e-12, 6.5)
@@ -254,20 +444,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 size = Vector3(19, 12, 1)
 
 [node name="Door" type="CSGBox3D" parent="West Hall/CSGBox3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -1, -0.0500002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -1, 0.2)
 operation = 2
-size = Vector3(2, 2, 1.1)
+size = Vector3(2, 2, 1.6)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="West Hall"]
+[node name="Roof" type="CSGBox3D" parent="West Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.5, 6)
 size = Vector3(19, 1, 12)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="West Hall"]
+[node name="spotlight" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight2" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight3" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight4" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight5" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight6" type="SpotLight3D" parent="West Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="Floor" type="CSGBox3D" parent="West Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 6)
 size = Vector3(19, 1, 12)
 
 [node name="East Hall" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -28)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="East Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.08165e-12, 6.5)
@@ -290,13 +511,43 @@ size = Vector3(2, 2, 1.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 size = Vector3(19, 12, 1)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="East Hall"]
+[node name="Roof" type="CSGBox3D" parent="East Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.5, 6)
 size = Vector3(19, 1, 12)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="East Hall"]
+[node name="spotlight" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight2" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight3" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, -4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight4" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight5" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, -6.333, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="spotlight6" type="SpotLight3D" parent="East Hall/Roof"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 6.333, -0.5, 4)
+spot_range = 12.969
+spot_angle = 23.86
+
+[node name="Foor" type="CSGBox3D" parent="East Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 6)
 size = Vector3(19, 1, 12)
 
 [node name="Player" parent="." instance=ExtResource("1_60fbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 7, 21)
