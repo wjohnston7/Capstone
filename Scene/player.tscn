@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://j5m0vfurmt4s"]
 
-[ext_resource type="Script" path="res://Script/player.gd" id="1_y86td"]
+[ext_resource type="Script" path="res://Script/Player.gd" id="1_y86td"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0cws"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lk7s8"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_y86td")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -13,6 +13,7 @@ albedo_color = Color(1, 0, 0, 1)
 radius = 4.0
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.954068, 0)
 script = ExtResource("1_l8qyn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
