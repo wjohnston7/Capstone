@@ -32,9 +32,11 @@ func _on_vision_body_entered(body):
 		target = body
 		navigation.target_position = body.position
 		print("i am moving")
-
-
-
-func _on_vision_body_exited(body):
-	if body.is_in_group("player"):
+	else:
 		state = "idle"
+
+
+
+#func _on_vision_body_exited(body):
+	#if body.is_in_group("player"):
+		#state = "idle"
