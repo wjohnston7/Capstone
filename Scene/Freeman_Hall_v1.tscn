@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=25 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_7nfrs"]
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="1_60fbb"]
@@ -15,7 +15,7 @@
 [ext_resource type="Material" uid="uid://0mgwrb15xlhu" path="res://Wall3.tres" id="11_635ed"]
 [ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="11_oxc4t"]
 [ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="12_gsg0x"]
-[ext_resource type="Script" path="res://Script/enemy.gd" id="13_56kb3"]
+[ext_resource type="PackedScene" uid="uid://o0ytfjfq8ccc" path="res://Scene/enemy.tscn" id="16_dlthj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3xu2f"]
 vertices = PackedVector3Array(9, 2.5, -0.25, 9, 2.5, -0.5, 8, 2.5, -0.75, 8, 2.5, 0, -3.75, 2.5, 10.25, 8, 2.5, 0, 8, 2.5, -0.75, -6.75, 2.5, -13.25, -7, 2.5, -15, -7.75, 2.5, -15, -7.75, 2.5, 10.25, -3.75, 2.5, 10.25, -3.5, 2.5, 12.5, 8, 2.5, 12.5, 8, 2.5, 0, -7.75, 2.5, 10.25, -3.75, 2.5, 10.25, 8, 2.5, -0.75, 8, 2.5, -13.25, -6.75, 2.5, -13.25, -9, 6.5, 13.5, -8.5, 6.5, 13.5, -8.5, 6.5, 10.75, -9, 6.5, -14.5, -3.75, 6.5, 10.75, -3.75, 6.5, 13.5, 9.25, 6.5, 13.5, -3.75, 6.5, 10.75, 9.25, 6.5, 13.5, 9.25, 6.5, -14.5, -9, 6.5, -14.5, -9, 6.5, -14.5, -8.5, 6.5, 10.75, -3.75, 6.5, 10.75, -8.5, -1.5, -0.5, -8.5, -1.5, 0.25, -7.75, -1.5, 0.5, -7.75, -1.5, -0.75, 8.75, -1.5, 12, 8.75, -1.5, 11.25, 8, -1.5, 11, -7.75, -1.5, -0.75, -7.75, -1.5, 0.5, 8, -1.5, 11, -7.75, -1.5, 12, 8.75, -1.5, 12, 8, -1.5, 11, -7.75, -1.5, 0.5, 8, -1.5, -12.75, 8.75, -1.5, -13.75, -7.75, -1.5, -13.75, 8, -1.5, -12.75, -7.75, -1.5, -13.75, -7.75, -1.5, -0.75, 8, -1.5, 11, 9, 2.5, -0.5, 9, 2.5, -0.25, 10.25, 2.25, 0, 10.25, 2.25, -0.75, 18.75, -2, 1.75, 18.75, -2, -3, 10.25, 2.25, -0.75, 10.25, 2.25, 0, 10.25, 2.25, 0, 10.25, 2.25, 1.75, 18.75, -2, 1.75, 18.75, -2, -3, 10.25, 2.25, -3, 10.25, 2.25, -0.75)
@@ -57,16 +57,6 @@ ambient_light_source = 3
 ambient_light_color = Color(0.30139, 0.30139, 0.30139, 1)
 ambient_light_energy = 1.34
 fog_enabled = true
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ojcg4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_upv0m"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idoor"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_g8tot"]
-radius = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a1nq"]
 albedo_texture = ExtResource("1_7nfrs")
@@ -327,30 +317,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4wufa")
 
-[node name="Enemy" type="CharacterBody3D" parent="." groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 4.1, -1)
-script = ExtResource("13_56kb3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
-shape = SubResource("CapsuleShape3D_ojcg4")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Enemy/CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_upv0m")
-material = SubResource("StandardMaterial3D_idoor")
-
-[node name="Vision" type="Area3D" parent="Enemy"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Vision"]
-shape = SubResource("SphereShape3D_g8tot")
-disabled = true
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemy"]
-
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 2.08165e-12)
 use_collision = true
 size = Vector3(100, 1, 100)
 material = SubResource("StandardMaterial3D_5a1nq")
 
-[connection signal="body_entered" from="Enemy/Vision" to="Enemy" method="_on_vision_body_entered"]
-[connection signal="body_exited" from="Enemy/Vision" to="Enemy" method="_on_vision_body_exited"]
+[node name="Enemy" parent="." instance=ExtResource("16_dlthj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, -3)

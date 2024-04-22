@@ -13,14 +13,15 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	match state:
-		"idle":
-			pass
-		"moving":
-			navigation.target_position = target.position
-			var next_spot = navigation.get_next_path_position()
-			velocity = next_spot- position
+		state = "idle"
+	if is_on_floor():
+		match state:
+			"idle":
+				pass
+			"moving":
+				navigation.target_position = target.position
+				var next_spot = navigation.get_next_path_position()
+				velocity = next_spot- position
 	move_and_slide()
 
 
@@ -35,4 +36,5 @@ func _on_vision_body_entered(body):
 
 
 func _on_vision_body_exited(body):
-	state = "idle"
+	if body.is_in_group("player"):
+		state = "idle"
