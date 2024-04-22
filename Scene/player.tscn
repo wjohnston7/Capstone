@@ -1,23 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://j5m0vfurmt4s"]
 
-[ext_resource type="Script" path="res://Script/Player.gd" id="1_7be61"]
+[ext_resource type="Script" path="res://Script/player.gd" id="1_y86td"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0cws"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lk7s8"]
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_y86td")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("1_7be61")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_q0cws")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Player/CollisionShape3D"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_lk7s8")
 
-[node name="Neck" type="Node3D" parent="Player"]
+[node name="Neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32032, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+[node name="Camera3D" type="Camera3D" parent="Neck"]

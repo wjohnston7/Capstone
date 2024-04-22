@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://o0ytfjfq8ccc"]
+
+[ext_resource type="Script" path="res://Script/enemy.gd" id="1_l8qyn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ojcg4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_upv0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idoor"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g8tot"]
+radius = 4.0
+
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_l8qyn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ojcg4")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_upv0m")
+material = SubResource("StandardMaterial3D_idoor")
+
+[node name="Vision" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vision"]
+shape = SubResource("SphereShape3D_g8tot")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
+[connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]

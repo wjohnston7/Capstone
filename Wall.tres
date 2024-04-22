@@ -10,4 +10,4 @@ roughness_texture = ExtResource("3_pcjh5")
 emission_energy_multiplier = 0.0
 normal_enabled = true
 normal_texture = ExtResource("2_7abe0")
-uv1_scale = Vector3(2, 10, 2)
+uv1_scale = Vector3(1, 2.5, 1)
