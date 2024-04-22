@@ -1,15 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://ywu40s0uwggr"]
+[gd_scene load_steps=8 format=3 uid="uid://ywu40s0uwggr"]
 
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="1_ou62e"]
+[ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="2_fkl5x"]
+[ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="3_0w0g6"]
+[ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="4_hiqym"]
+[ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Floor.tres" id="5_mblki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q6l2"]
+albedo_texture = ExtResource("2_fkl5x")
+roughness_texture = ExtResource("4_hiqym")
+normal_enabled = true
+normal_texture = ExtResource("3_0w0g6")
+uv1_scale = Vector3(15, 15, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ex835"]
+size = Vector3(19, 1, 52)
 
 [node name="Main" type="Node3D"]
 
-[node name="Ground" type="CSGBox3D" parent="."]
-use_collision = true
-size = Vector3(1000, 0.5, 1000)
-
 [node name="Player" parent="." instance=ExtResource("1_ou62e")]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 21, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.5, 0.707107, -0.5, -0.5, 0.707107, 0.707107, -0.707107, -7.81214e-08, 0, 28, 0)
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_6q6l2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+size = Vector3(19, 1, 52)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Ground/CSGBox3D"]
+mesh = SubResource("BoxMesh_ex835")
+material = ExtResource("5_mblki")

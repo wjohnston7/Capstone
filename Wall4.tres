@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://s7l7c01qshgl"]
+
+[ext_resource type="Texture2D" uid="uid://cy2opp610lrc3" path="res://textures/cracked_concrete_wall_diff_4k.png" id="1_ownfg"]
+[ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="2_5pr6x"]
+[ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="3_b03dy"]
+
+[resource]
+albedo_texture = ExtResource("1_ownfg")
+roughness_texture = ExtResource("3_b03dy")
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_texture = ExtResource("2_5pr6x")
+uv1_scale = Vector3(10, 10, 2)
