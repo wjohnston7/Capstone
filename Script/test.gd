@@ -1,6 +1,4 @@
 extends CharacterBody3D
-@onready var target = $Marker3D
-@onready var waiting = false
 
 
 const SPEED = 5.0
@@ -8,8 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-func _ready():
-	move_toward()
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -30,18 +27,5 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
-	var random_pt = NavigationMesh.get_random_point
-	set
 
 	move_and_slide()
-#func move_to():
-	#if body.position(-9.2, 0, 5):
-		#velocity.z = -SPEED
-	#if body.position():
-	
-func am_i_moving():
-	if velocity.x = 0:
-		state = "idle"
-	else:
-		state = "moving"

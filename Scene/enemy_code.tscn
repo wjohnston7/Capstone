@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddwrbuadorbx5"]
+
+[ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_585ws"]
+[ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="2_wavck"]
+[ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="3_xe3ke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmmq1"]
+albedo_texture = ExtResource("1_585ws")
+roughness_texture = ExtResource("3_xe3ke")
+normal_enabled = true
+normal_texture = ExtResource("2_wavck")
+uv1_scale = Vector3(15, 15, 15)
+
+[node name="enemy code" type="Node3D"]
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 2.08165e-12)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_lmmq1")

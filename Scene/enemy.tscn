@@ -19,6 +19,7 @@ script = ExtResource("1_l8qyn")
 shape = SubResource("CapsuleShape3D_ojcg4")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
+use_collision = true
 mesh = SubResource("CapsuleMesh_upv0m")
 material = SubResource("StandardMaterial3D_idoor")
 

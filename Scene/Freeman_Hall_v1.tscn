@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=26 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_7nfrs"]
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="1_60fbb"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="11_oxc4t"]
 [ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="12_gsg0x"]
 [ext_resource type="PackedScene" uid="uid://o0ytfjfq8ccc" path="res://Scene/enemy.tscn" id="16_dlthj"]
+[ext_resource type="Script" path="res://Script/enemy.gd" id="17_xqj4j"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3xu2f"]
 vertices = PackedVector3Array(9, 2.5, -0.25, 9, 2.5, -0.5, 8, 2.5, -0.75, 8, 2.5, 0, -3.75, 2.5, 10.25, 8, 2.5, 0, 8, 2.5, -0.75, -6.75, 2.5, -13.25, -7, 2.5, -15, -7.75, 2.5, -15, -7.75, 2.5, 10.25, -3.75, 2.5, 10.25, -3.5, 2.5, 12.5, 8, 2.5, 12.5, 8, 2.5, 0, -7.75, 2.5, 10.25, -3.75, 2.5, 10.25, 8, 2.5, -0.75, 8, 2.5, -13.25, -6.75, 2.5, -13.25, -9, 6.5, 13.5, -8.5, 6.5, 13.5, -8.5, 6.5, 10.75, -9, 6.5, -14.5, -3.75, 6.5, 10.75, -3.75, 6.5, 13.5, 9.25, 6.5, 13.5, -3.75, 6.5, 10.75, 9.25, 6.5, 13.5, 9.25, 6.5, -14.5, -9, 6.5, -14.5, -9, 6.5, -14.5, -8.5, 6.5, 10.75, -3.75, 6.5, 10.75, -8.5, -1.5, -0.5, -8.5, -1.5, 0.25, -7.75, -1.5, 0.5, -7.75, -1.5, -0.75, 8.75, -1.5, 12, 8.75, -1.5, 11.25, 8, -1.5, 11, -7.75, -1.5, -0.75, -7.75, -1.5, 0.5, 8, -1.5, 11, -7.75, -1.5, 12, 8.75, -1.5, 12, 8, -1.5, 11, -7.75, -1.5, 0.5, 8, -1.5, -12.75, 8.75, -1.5, -13.75, -7.75, -1.5, -13.75, 8, -1.5, -12.75, -7.75, -1.5, -13.75, -7.75, -1.5, -0.75, 8, -1.5, 11, 9, 2.5, -0.5, 9, 2.5, -0.25, 10.25, 2.25, 0, 10.25, 2.25, -0.75, 18.75, -2, 1.75, 18.75, -2, -3, 10.25, 2.25, -0.75, 10.25, 2.25, 0, 10.25, 2.25, 0, 10.25, 2.25, 1.75, 18.75, -2, 1.75, 18.75, -2, -3, 10.25, 2.25, -3, 10.25, 2.25, -0.75)
@@ -325,3 +326,12 @@ material = SubResource("StandardMaterial3D_5a1nq")
 
 [node name="Enemy" parent="." instance=ExtResource("16_dlthj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, -3)
+script = ExtResource("17_xqj4j")
+
+[node name="Marker3D" type="Marker3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 0, 11.5)
+
+[node name="Timer" type="Timer" parent="Enemy"]
+wait_time = 7.0
+
+[connection signal="timeout" from="Enemy/Timer" to="Enemy" method="_on_timer_timeout"]
