@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8aror203rtyp"]
+
+[ext_resource type="Texture2D" uid="uid://b03xmfi86kx02" path="res://Image 4-27-24 at 1.22 PM.png" id="1_com8p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oh4r7"]
+size = Vector3(0.25, 0.25, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hjvg"]
+albedo_texture = ExtResource("1_com8p")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aey17"]
+radius = 0.2
+
+[node name="Flyer" type="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+flip_faces = true
+mesh = SubResource("BoxMesh_oh4r7")
+material = SubResource("StandardMaterial3D_7hjvg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_aey17")

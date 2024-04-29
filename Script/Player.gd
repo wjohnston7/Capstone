@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var camera_3D = $Neck/Camera3D
 @onready var neck = $Neck
-
+@export var counter = 0
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -42,3 +42,9 @@ func _input(event):
 		camera_3D.rotate_x(-event.relative.y*.001)
 		neck.rotate_y(-event.relative.x*.001)
 		camera_3D.rotation.x = clamp(camera_3D.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+
+
+func _on_flyer_body_entered(body):
+	if body.is_in_group("player"):
+		counter += 1
+		print (counter)
