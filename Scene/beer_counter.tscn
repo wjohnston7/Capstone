@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfsjp6n5ourhj"]
+
+[ext_resource type="Script" path="res://Script/beer_counter.gd" id="1_27dbn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ebk4"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Beer Counter" type="CanvasLayer"]
+script = ExtResource("1_27dbn")
+
+[node name="beercount" type="Label" parent="."]
+offset_left = 928.0
+offset_top = 572.0
+offset_right = 1044.0
+offset_bottom = 595.0
+text = "Beer Bottles     "
+label_settings = SubResource("LabelSettings_0ebk4")

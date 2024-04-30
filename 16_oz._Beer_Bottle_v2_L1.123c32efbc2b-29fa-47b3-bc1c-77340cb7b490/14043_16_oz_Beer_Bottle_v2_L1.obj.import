@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btib15bhhfyx3"
+path="res://.godot/imported/14043_16_oz_Beer_Bottle_v2_L1.obj-feaa7661337c829b08dd95d6cb1e420a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/14043_16_oz_Beer_Bottle_v2_L1.obj-feaa7661337c829b08dd95d6cb1e420a.mesh"]
+
+source_file="res://16_oz._Beer_Bottle_v2_L1.123c32efbc2b-29fa-47b3-bc1c-77340cb7b490/14043_16_oz_Beer_Bottle_v2_L1.obj"
+dest_files=["res://.godot/imported/14043_16_oz_Beer_Bottle_v2_L1.obj-feaa7661337c829b08dd95d6cb1e420a.mesh", "res://.godot/imported/14043_16_oz_Beer_Bottle_v2_L1.obj-feaa7661337c829b08dd95d6cb1e420a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

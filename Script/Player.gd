@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 @onready var camera_3D = $Neck/Camera3D
 @onready var neck = $Neck
-@export var counter = 0
+@export var clue_counter = 0
+@export var beer_counter = 0
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -46,5 +47,12 @@ func _input(event):
 
 func _on_flyer_body_entered(body):
 	if body.is_in_group("player"):
-		counter += 1
-		print (counter)
+		clue_counter += 1
+		print (clue_counter)
+
+
+func _on_beer_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1
+		print ("bber" + str(beer_counter))
+		
