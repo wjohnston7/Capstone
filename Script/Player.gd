@@ -4,10 +4,12 @@ extends CharacterBody3D
 @onready var neck = $Neck
 @export var clue_counter = 0
 @export var beer_counter = 0
+const ending_good = preload("res://Scene/Freeman_Hall_g.tscn")
+#const ending_bad = preload()
+
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
@@ -56,3 +58,24 @@ func _on_beer_body_entered(body):
 		beer_counter += 1
 		print ("bber" + str(beer_counter))
 		
+
+func _ending_creator():
+	if beer_counter >= 1:
+		var _ending = ending_good.instantiate()
+		_ending.position (1, 1, 1)
+		print("Congrats!")
+#if beer_counter < 1:
+		#pass #ending bad
+	##elif clue_counter < 1:
+		##pass #ending bad
+
+
+
+func _on_beer_2_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1
+
+
+func _on_beer_3_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1

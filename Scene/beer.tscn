@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://udkkb7esabs6"]
+[gd_scene load_steps=4 format=3 uid="uid://udkkb7esabs6"]
 
 [ext_resource type="ArrayMesh" uid="uid://btib15bhhfyx3" path="res://16_oz._Beer_Bottle_v2_L1.123c32efbc2b-29fa-47b3-bc1c-77340cb7b490/14043_16_oz_Beer_Bottle_v2_L1.obj" id="1_6fk03"]
+[ext_resource type="Script" path="res://Script/beer.gd" id="1_wn8x0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vya34"]
 radius = 2.0
 height = 9.6
 
 [node name="Beer" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0)
+script = ExtResource("1_wn8x0")
 
 [node name="CollisionPolygon3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, -1.86247e-38, 1, -4.37114e-08, 0, -1.9233e-07, 4.4)
