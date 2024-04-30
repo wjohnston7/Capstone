@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="2_fkl5x"]
 [ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="3_0w0g6"]
 [ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="4_hiqym"]
-[ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Floor.tres" id="5_mblki"]
+[ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Material/Floor.tres" id="5_mblki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q6l2"]
 albedo_texture = ExtResource("2_fkl5x")

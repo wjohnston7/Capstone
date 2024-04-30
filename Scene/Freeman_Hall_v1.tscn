@@ -1,19 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=28 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_7nfrs"]
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="1_60fbb"]
-[ext_resource type="Script" path="res://Script/Freeman_Hall_v1.gd" id="1_dbiih"]
 [ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="2_miouk"]
 [ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="3_1pdwd"]
-[ext_resource type="Material" uid="uid://dt3nhl0gkm7bo" path="res://Wall2.tres" id="4_8c2mw"]
+[ext_resource type="Material" uid="uid://dt3nhl0gkm7bo" path="res://Material/Wall2.tres" id="4_8c2mw"]
 [ext_resource type="Texture2D" uid="uid://b0lwxygqkuy6v" path="res://textures/brick_pavement_diff_4k.png" id="4_hwokd"]
-[ext_resource type="Material" uid="uid://dqglrdntb83co" path="res://Wall.tres" id="4_k0v2y"]
-[ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Floor.tres" id="5_3e7kx"]
+[ext_resource type="Material" uid="uid://dqglrdntb83co" path="res://Material/Wall.tres" id="4_k0v2y"]
+[ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Material/Floor.tres" id="5_3e7kx"]
 [ext_resource type="Texture2D" uid="uid://b7ravmjpl76uc" path="res://textures/brick_pavement_nor_gl_4k.png" id="5_i3myg"]
 [ext_resource type="Texture2D" uid="uid://cgavwgrq5cain" path="res://textures/brick_pavement_rough_4k.png" id="6_56xjo"]
 [ext_resource type="Texture2D" uid="uid://cy2opp610lrc3" path="res://textures/cracked_concrete_wall_diff_4k.png" id="10_cn7yw"]
-[ext_resource type="Material" uid="uid://s7l7c01qshgl" path="res://Wall4.tres" id="10_vyxpm"]
-[ext_resource type="Material" uid="uid://0mgwrb15xlhu" path="res://Wall3.tres" id="11_635ed"]
+[ext_resource type="Material" uid="uid://s7l7c01qshgl" path="res://Material/Wall4.tres" id="10_vyxpm"]
+[ext_resource type="Material" uid="uid://0mgwrb15xlhu" path="res://Material/Wall3.tres" id="11_635ed"]
 [ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="11_oxc4t"]
 [ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="12_gsg0x"]
 [ext_resource type="PackedScene" uid="uid://c8aror203rtyp" path="res://Scene/flyer.tscn" id="16_rpgu6"]
@@ -71,7 +70,6 @@ fog_enabled = true
 
 [node name="Freeman_Hall_v1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
-script = ExtResource("1_dbiih")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.0993196, -0.737142, 0.668399, 0, 0.671721, 0.740805, -0.995056, -0.0735764, 0.066715, 0, 0, 0)

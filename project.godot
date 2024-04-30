@@ -13,7 +13,7 @@ config_version=5
 config/name="Capstone"
 run/main_scene="res://Scene/Freeman_Hall_v1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Material/icon.svg"
 
 [input]
 

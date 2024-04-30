@@ -1,12 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8aror203rtyp"]
 
-[ext_resource type="Texture2D" uid="uid://b03xmfi86kx02" path="res://Image 4-27-24 at 1.22 PM.png" id="1_com8p"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_oh4r7"]
 size = Vector3(0.25, 0.25, 0.1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_agnnl"]
+load_path = "res://.godot/imported/Image 4-27-24 at 1.22 PM.png-2672ac2470a5f9ed370e4e48d2900280.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hjvg"]
-albedo_texture = ExtResource("1_com8p")
+albedo_texture = SubResource("CompressedTexture2D_agnnl")
 uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aey17"]
