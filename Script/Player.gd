@@ -4,8 +4,6 @@ extends CharacterBody3D
 @onready var neck = $Neck
 @export var clue_counter = 0
 @export var beer_counter = 0
-const ending_good = preload("res://Scene/Freeman_Hall_g.tscn")
-#const ending_bad = preload()
 
 
 const SPEED = 5.0
@@ -17,7 +15,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -50,25 +47,21 @@ func _input(event):
 func _on_flyer_body_entered(body):
 	if body.is_in_group("player"):
 		clue_counter += 1
-		print (clue_counter)
+
+
+func _on_flyer_2_body_entered(body):
+	if body.is_in_group("player"):
+		clue_counter += 1
+
+
+func _on_flyer_3_body_entered(body):
+	if body.is_in_group("player"):
+		clue_counter += 1
 
 
 func _on_beer_body_entered(body):
 	if body.is_in_group("player"):
 		beer_counter += 1
-		print ("bber" + str(beer_counter))
-		
-
-func _ending_creator():
-	if beer_counter >= 1:
-		var _ending = ending_good.instantiate()
-		_ending.position (1, 1, 1)
-		print("Congrats!")
-#if beer_counter < 1:
-		#pass #ending bad
-	##elif clue_counter < 1:
-		##pass #ending bad
-
 
 
 func _on_beer_2_body_entered(body):
@@ -79,3 +72,19 @@ func _on_beer_2_body_entered(body):
 func _on_beer_3_body_entered(body):
 	if body.is_in_group("player"):
 		beer_counter += 1
+
+
+func _on_beer_4_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1
+
+
+func _on_beer_5_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1
+
+
+func _on_beer_6_body_entered(body):
+	if body.is_in_group("player"):
+		beer_counter += 1
+

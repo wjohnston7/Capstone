@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlgght1rq7wyl"]
+
+[ext_resource type="Texture2D" uid="uid://hair0s5w36et" path="res://Material/VIDEO GAME-3.png" id="1_4diak"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gbr6x"]
+radius = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_dmg5s"]
+size = Vector3(0.25, 0.25, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0le8"]
+albedo_texture = ExtResource("1_4diak")
+uv1_scale = Vector3(3, 2, 1)
+
+[node name="flyer3" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gbr6x")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_dmg5s")
+material = SubResource("StandardMaterial3D_k0le8")

@@ -1,32 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0rner48viwr2"]
+[gd_scene load_steps=14 format=3 uid="uid://c0rner48viwr2"]
 
 [ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_jgu6m"]
 [ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="2_ohng6"]
 [ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="3_li42x"]
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="4_g37it"]
 [ext_resource type="PackedScene" uid="uid://udkkb7esabs6" path="res://Scene/beer.tscn" id="5_wj2ol"]
-[ext_resource type="PackedScene" uid="uid://c8aror203rtyp" path="res://Scene/flyer.tscn" id="6_0cbsy"]
+[ext_resource type="PackedScene" uid="uid://c8aror203rtyp" path="res://Scene/flyer1.tscn" id="6_0cbsy"]
 [ext_resource type="Script" path="res://Script/Ending maker.gd" id="6_gf6x6"]
 [ext_resource type="PackedScene" uid="uid://cfsjp6n5ourhj" path="res://Scene/beer_counter.tscn" id="8_4sw0s"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_py58a"]
-sky_top_color = Color(0.556997, 0.626034, 0.722192, 1)
-sky_horizon_color = Color(0.262152, 0.269092, 0.280047, 1)
-sky_curve = 0.395852
-sky_energy_multiplier = 1.2
-ground_horizon_color = Color(0.262152, 0.269092, 0.280047, 1)
-sun_angle_max = 45.0
-
-[sub_resource type="Sky" id="Sky_l1jqh"]
-sky_material = SubResource("ProceduralSkyMaterial_py58a")
-
-[sub_resource type="Environment" id="Environment_n6a7m"]
-background_mode = 2
-sky = SubResource("Sky_l1jqh")
-ambient_light_source = 3
-ambient_light_color = Color(0.30139, 0.30139, 0.30139, 1)
-ambient_light_energy = 1.34
-fog_enabled = true
+[ext_resource type="PackedScene" uid="uid://cxkju8n2knkp8" path="res://Scene/flyer_2.tscn" id="9_6xgui"]
+[ext_resource type="PackedScene" uid="uid://dlgght1rq7wyl" path="res://Scene/flyer_3.tscn" id="10_4n0n7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvqfj"]
 albedo_texture = ExtResource("1_jgu6m")
@@ -35,29 +18,17 @@ normal_enabled = true
 normal_texture = ExtResource("2_ohng6")
 uv1_scale = Vector3(15, 15, 15)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7pti"]
+size = Vector3(2, 2.2, 1.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkgm0"]
+size = Vector3(2, 2.2, 1.3)
+
 [node name="Game" type="Node3D"]
 script = ExtResource("6_gf6x6")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n6a7m")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.5, 0.5, 0.707107, -0.5, -0.5, 0.707107, 0.707107, -0.707107, -7.81214e-08, 0, 28, 0)
-
 [node name="Player" parent="." instance=ExtResource("4_g37it")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5329, 0.135934, 0.158802)
-
-[node name="Flyer" parent="." instance=ExtResource("6_0cbsy")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.37958, -0.56312, -14.2949)
-
-[node name="Beer" parent="." instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -4.28683, -2, -10.7762)
-
-[node name="Beer2" parent="." instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -2.69377, -2, -11.6801)
-
-[node name="Beer3" parent="." instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -2.03543, -2, -9.76219)
 
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 4.1633e-12)
@@ -66,11 +37,84 @@ size = Vector3(100, 1, 100)
 material = SubResource("StandardMaterial3D_cvqfj")
 
 [node name="Beer Counter" parent="." instance=ExtResource("8_4sw0s")]
+follow_viewport_enabled = true
 
-[connection signal="body_entered" from="Flyer" to="Player" method="_on_flyer_body_entered"]
-[connection signal="body_entered" from="Beer" to="Player" method="_on_beer_body_entered"]
-[connection signal="body_entered" from="Beer" to="Beer" method="_on_body_entered"]
-[connection signal="body_entered" from="Beer2" to="Player" method="_on_beer_2_body_entered"]
-[connection signal="body_entered" from="Beer2" to="Beer2" method="_on_body_entered"]
-[connection signal="body_entered" from="Beer3" to="Player" method="_on_beer_3_body_entered"]
-[connection signal="body_entered" from="Beer3" to="Beer3" method="_on_body_entered"]
+[node name="Ending Signal" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, 13.995)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ending Signal"]
+shape = SubResource("BoxShape3D_q7pti")
+
+[node name="Ending timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Countables" type="Node3D" parent="."]
+
+[node name="Beer" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -4.28683, 2, -10.7762)
+
+[node name="Beer2" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -2.69377, 2, -11.6801)
+
+[node name="Beer3" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 12.9646, -2, -9.76219)
+
+[node name="Beer4" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 2, 9)
+
+[node name="Beer5" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 2, 2, 9)
+
+[node name="Beer6" parent="Countables" instance=ExtResource("5_wj2ol")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 2, -11)
+
+[node name="Flyer" parent="Countables" instance=ExtResource("6_0cbsy")]
+transform = Transform3D(-1.74846e-07, 1.39515e-15, 4, 1.39515e-15, 4, -1.39515e-15, -4, 1.39515e-15, -1.74846e-07, 9.52042, -0.56312, -9.2949)
+
+[node name="flyer2" parent="Countables" instance=ExtResource("9_6xgui")]
+transform = Transform3D(-1.74846e-07, 1.39515e-15, 4, 1.39515e-15, 4, -1.39515e-15, -4, 1.39515e-15, -1.74846e-07, -8.5, -0.7, -11)
+
+[node name="flyer3" parent="Countables" instance=ExtResource("10_4n0n7")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.6, 3, 12.5)
+
+[node name="Ending Signal 2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 3, -16)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ending Signal 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.299999)
+shape = SubResource("BoxShape3D_bkgm0")
+
+[connection signal="body_entered" from="Ending Signal" to="." method="_on_ending_signal_body_entered"]
+[connection signal="body_exited" from="Ending Signal" to="." method="_on_ending_signal_body_exited"]
+[connection signal="timeout" from="Ending timer" to="." method="_on_ending_timer_timeout"]
+[connection signal="body_entered" from="Countables/Beer" to="." method="_on_beer_body_entered"]
+[connection signal="body_entered" from="Countables/Beer" to="Player" method="_on_beer_body_entered"]
+[connection signal="body_entered" from="Countables/Beer" to="Beer Counter" method="_on_beer_body_entered"]
+[connection signal="body_entered" from="Countables/Beer" to="Countables/Beer" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Beer2" to="." method="_on_beer_2_body_entered"]
+[connection signal="body_entered" from="Countables/Beer2" to="Player" method="_on_beer_2_body_entered"]
+[connection signal="body_entered" from="Countables/Beer2" to="Beer Counter" method="_on_beer_2_body_entered"]
+[connection signal="body_entered" from="Countables/Beer2" to="Countables/Beer2" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Beer3" to="." method="_on_beer_3_body_entered"]
+[connection signal="body_entered" from="Countables/Beer3" to="Player" method="_on_beer_3_body_entered"]
+[connection signal="body_entered" from="Countables/Beer3" to="Beer Counter" method="_on_beer_3_body_entered"]
+[connection signal="body_entered" from="Countables/Beer3" to="Countables/Beer3" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Beer4" to="." method="_on_beer_4_body_entered"]
+[connection signal="body_entered" from="Countables/Beer4" to="Player" method="_on_beer_4_body_entered"]
+[connection signal="body_entered" from="Countables/Beer4" to="Beer Counter" method="_on_beer_4_body_entered"]
+[connection signal="body_entered" from="Countables/Beer4" to="Countables/Beer4" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Beer5" to="." method="_on_beer_5_body_entered"]
+[connection signal="body_entered" from="Countables/Beer5" to="Player" method="_on_beer_5_body_entered"]
+[connection signal="body_entered" from="Countables/Beer5" to="Beer Counter" method="_on_beer_5_body_entered"]
+[connection signal="body_entered" from="Countables/Beer5" to="Countables/Beer5" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Beer6" to="." method="_on_beer_6_body_entered"]
+[connection signal="body_entered" from="Countables/Beer6" to="Player" method="_on_beer_6_body_entered"]
+[connection signal="body_entered" from="Countables/Beer6" to="Beer Counter" method="_on_beer_6_body_entered"]
+[connection signal="body_entered" from="Countables/Beer6" to="Countables/Beer6" method="_on_body_entered"]
+[connection signal="body_entered" from="Countables/Flyer" to="." method="_on_flyer_body_entered"]
+[connection signal="body_entered" from="Countables/Flyer" to="Player" method="_on_flyer_body_entered"]
+[connection signal="body_entered" from="Countables/flyer2" to="." method="_on_flyer_2_body_entered"]
+[connection signal="body_entered" from="Countables/flyer2" to="Player" method="_on_flyer_2_body_entered"]
+[connection signal="body_entered" from="Countables/flyer3" to="." method="_on_flyer_3_body_entered"]
+[connection signal="body_entered" from="Countables/flyer3" to="Player" method="_on_flyer_3_body_entered"]
+[connection signal="body_entered" from="Ending Signal 2" to="." method="_on_ending_signal_2_body_entered"]

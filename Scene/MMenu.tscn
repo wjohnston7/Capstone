@@ -1,7 +1,73 @@
-[gd_scene format=3 uid="uid://bflgt01ha36cy"]
+[gd_scene load_steps=4 format=3 uid="uid://bflgt01ha36cy"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" path="res://Script/MMenu.gd" id="1_foywq"]
+[ext_resource type="Script" path="res://Script/full_screen.gd" id="2_ycutd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fp1qa"]
+font_size = 30
+
+[node name="Main Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_foywq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+expand_icon = true
+
+[node name="Credits" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Credits"
+
+[node name="Info" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Info"
+
+[node name="Quit" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter Full Screen pls"
+label_settings = SubResource("LabelSettings_fp1qa")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ycutd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="CanvasLayer/Label" method="_on_timer_timeout"]

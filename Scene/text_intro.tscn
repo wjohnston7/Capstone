@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://blq6bn1gqot4i"]
+
+[ext_resource type="Script" path="res://Script/text_intro.gd" id="1_x3d4i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hjnd"]
+font_size = 64
+font_color = Color(2.07795e-07, 0.633342, 0.633567, 1)
+shadow_color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[node name="Text Intro" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_x3d4i")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -915.5
+offset_top = -43.5
+offset_right = 915.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "iMessage:
+Cat Both: YO wassup, you gotta come thru to philsoc!! Its gonna be epic!
+You gotta come prepped with a six pack tho. C U Der ;)"
+label_settings = SubResource("LabelSettings_1hjnd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
