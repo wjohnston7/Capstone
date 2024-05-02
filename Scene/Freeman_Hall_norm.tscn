@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=19 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Material" uid="uid://dt3nhl0gkm7bo" path="res://Material/Wall2.tres" id="1_ppfyb"]
 [ext_resource type="Material" uid="uid://dqglrdntb83co" path="res://Material/Wall.tres" id="2_1ovg0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b0lwxygqkuy6v" path="res://textures/brick_pavement_diff_4k.png" id="4_onljl"]
 [ext_resource type="Texture2D" uid="uid://b7ravmjpl76uc" path="res://textures/brick_pavement_nor_gl_4k.png" id="5_pptao"]
 [ext_resource type="Texture2D" uid="uid://cgavwgrq5cain" path="res://textures/brick_pavement_rough_4k.png" id="6_csi4x"]
-[ext_resource type="PackedScene" uid="uid://cg7ywsc3e0dxc" path="res://Scene/zach_jones.tscn" id="7_471hs"]
 [ext_resource type="Texture2D" uid="uid://cy2opp610lrc3" path="res://textures/cracked_concrete_wall_diff_4k.png" id="7_sd1ik"]
 [ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="8_lfbbq"]
 [ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="9_eo48b"]
@@ -202,9 +201,6 @@ transform = Transform3D(9.78432, -4.22886e-07, 1.08652e-14, -8.55373e-07, -4.837
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 1)
 material = SubResource("StandardMaterial3D_y1al3")
-
-[node name="Zach Jones" parent="NavigationRegion3D" instance=ExtResource("7_471hs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -1, 2.08165e-12)
 
 [node name="West Hall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 13)
