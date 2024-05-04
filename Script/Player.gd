@@ -15,6 +15,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		if velocity.y < -14:
+			kill()
+		#$"fall damage".start()
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -88,3 +91,11 @@ func _on_beer_6_body_entered(body):
 	if body.is_in_group("player"):
 		beer_counter += 1
 
+
+
+func _on_fall_damage_timeout():
+	kill()
+
+
+func kill():
+	print("i am dead")

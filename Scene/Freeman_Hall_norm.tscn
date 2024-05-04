@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=24 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Material" uid="uid://dt3nhl0gkm7bo" path="res://Material/Wall2.tres" id="1_ppfyb"]
 [ext_resource type="Material" uid="uid://dqglrdntb83co" path="res://Material/Wall.tres" id="2_1ovg0"]
 [ext_resource type="Material" uid="uid://ce33s0abvkdkm" path="res://Material/Floor.tres" id="3_qagxy"]
+[ext_resource type="Script" path="res://Script/Elevator.gd" id="4_58faw"]
 [ext_resource type="Texture2D" uid="uid://b0lwxygqkuy6v" path="res://textures/brick_pavement_diff_4k.png" id="4_onljl"]
 [ext_resource type="Texture2D" uid="uid://b7ravmjpl76uc" path="res://textures/brick_pavement_nor_gl_4k.png" id="5_pptao"]
 [ext_resource type="Texture2D" uid="uid://cgavwgrq5cain" path="res://textures/brick_pavement_rough_4k.png" id="6_csi4x"]
@@ -16,6 +17,34 @@
 vertices = PackedVector3Array(-8.625, -1.5, -25.5, -8.625, -1.5, -15.5, 8.625, -1.5, -15.5, 8.625, -1.5, -25.5, -3.875, 6.5, 10.25, -3.625, 6.5, 12.5, 8.625, 6.5, 12.5, -8.625, 6.5, -14.5, -8.625, 6.5, 10.25, -3.875, 6.5, 10.25, -3.875, 6.5, 10.25, 8.625, 6.5, 12.5, 8.625, 6.5, -14.5, -8.625, 6.5, -14.5, -6.375, 2.5, -14, -6.625, 2.5, -14.5, -7.375, 2.5, -14.5, -6.375, 2.5, -14, -7.375, 2.5, -14.5, -8.125, 2.5, -14, -6.875, 2.5, 10, -2.125, 2.5, 10, 8.625, 2.5, -0.25, -7.875, 2.5, 12.5, -7.125, 2.5, 12.5, -6.875, 2.5, 10, -8.125, 2.5, -14, -2.125, 2.5, 10, -1.875, 2.5, 12, 8.375, 2.5, 12, 8.625, 2.5, -0.25, 8.625, 2.5, -0.25, 8.375, 2.5, -14, -6.375, 2.5, -14, -8.625, -1.5, -0.25, -8.625, -1.5, 0.5, -8.125, -1.5, 0.75, -8.125, -1.5, -0.5, -8.625, -1.5, -0.25, -8.125, -1.5, 0.75, 8.625, -1.5, 12, -8.125, -1.5, 0.75, -8.125, -1.5, 12, 8.625, -1.5, 12, 8.375, -1.5, -14, -8.125, -1.5, -14, -8.125, -1.5, -0.5, 8.625, -1.5, 12, 9.875, 2.25, -3, 9.875, 2.25, 1.75, 18.625, -2, 1.75, 18.625, -2, -3, -8.625, -1.5, 25, 8.625, -1.5, 25, 8.375, -1.5, 13.5, -8.625, -1.5, 13.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(9, 8, 7), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(16, 15, 14), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 22), PackedInt32Array(19, 22, 21), PackedInt32Array(19, 21, 20), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 26), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(33, 32, 31), PackedInt32Array(36, 35, 34), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(43, 42, 41), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(51, 50, 48), PackedInt32Array(48, 50, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53)]
 geometry_parsed_geometry_type = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npa6w"]
+size = Vector3(2, 0.25, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qqcxj"]
+size = Vector3(2, 0.25, 2)
+
+[sub_resource type="Animation" id="Animation_f5uj1"]
+resource_name = "up"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(9.53672e-07, 1.5, -13.65), Vector3(2.08165e-12, 5.25, -13.65), Vector3(9.53672e-07, 1.5, -13.65)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bmjk"]
+_data = {
+"up": SubResource("Animation_f5uj1")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_wbn5q"]
 size = Vector3(18, 1, 51.5)
@@ -64,21 +93,21 @@ navigation_mesh = SubResource("NavigationMesh_3xu2f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 
 [node name="Ewall" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53676e-07, 0, -0.200001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47359e-06, 0, 0.399999)
 use_collision = true
-size = Vector3(17.8, 4, 0.25)
+size = Vector3(17, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
 [node name="Wwall" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0250006, 0, -27.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249996, 0, -27.7)
 use_collision = true
-size = Vector3(17.75, 4, 0.25)
+size = Vector3(17.1, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
 [node name="Swall" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -13.85)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, -13.65)
 use_collision = true
-size = Vector3(0.25, 4, 27.7)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
 
 [node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/Swall"]
@@ -87,16 +116,10 @@ gi_mode = 0
 operation = 2
 size = Vector3(2, 2.5, 1)
 
-[node name="Door2" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/Swall"]
-transform = Transform3D(-4.37114e-08, 0, -1, -1.91069e-15, 1, -3.55271e-15, 1, -8.35189e-23, -4.37114e-08, 0, -0.75, -24.1)
-gi_mode = 0
-operation = 2
-size = Vector3(2, 2.5, 1)
-
 [node name="Entrance" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -13.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, -13.65)
 use_collision = true
-size = Vector3(0.25, 4, 28.2)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
 
 [node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/Entrance"]
@@ -112,16 +135,33 @@ operation = 2
 size = Vector3(2.5, 2.8, 4.2)
 
 [node name="Floor1" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500002, 1.5, -14.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53672e-07, 1.5, -13.65)
 use_collision = true
-size = Vector3(17.9, 1, 27.9)
+size = Vector3(17, 1, 27.6)
 material = ExtResource("3_qagxy")
 
 [node name="Stair_opening" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/Floor1"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, -1.5246e-23, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -4.55, 0, 12.5)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, -1.5246e-23, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 6, 2.08165e-12, 10)
 gi_mode = 0
 operation = 2
-size = Vector3(2, 4.5, 1)
+size = Vector3(2, 2, 2)
+
+[node name="Elevator" type="AnimatableBody3D" parent="NavigationRegion3D/Ground-level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01982e-07, 2.48969, -13.65)
+script = ExtResource("4_58faw")
+
+[node name="collision shape" type="CollisionShape3D" parent="NavigationRegion3D/Ground-level/Elevator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3.25, 10)
+shape = SubResource("BoxShape3D_npa6w")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D/Ground-level/Elevator/collision shape"]
+use_collision = true
+mesh = SubResource("BoxMesh_qqcxj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/Ground-level/Elevator/collision shape"]
+libraries = {
+"": SubResource("AnimationLibrary_0bmjk")
+}
 
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, -13.25)
@@ -133,170 +173,210 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.001, 2.08165e-
 mesh = SubResource("BoxMesh_wbn5q")
 material = ExtResource("3_qagxy")
 
+[node name="LRoom" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.12238e-23, 0, -1.12238e-23, 1, -5.875, 0, -11)
+size = Vector3(6, 3.999, 0.5)
+
+[node name="Doorway" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/LRoom"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 3.1, 0, 5.475)
+size = Vector3(11.4, 3.999, 0.5)
+
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/LRoom/Doorway"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, -0.75, 0.0999999)
+gi_mode = 0
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="RRoom" type="CSGBox3D" parent="NavigationRegion3D/Ground-level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.875, 0, -15)
+size = Vector3(6, 3.999, 0.5)
+
+[node name="Doorway" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/RRoom"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 3.125, 0, -6.075)
+size = Vector3(12.6, 3.999, 0.5)
+
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Ground-level/RRoom/Doorway"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, -0.75, 0.0999999)
+gi_mode = 0
+operation = 2
+size = Vector3(2, 2.5, 1)
+
 [node name="Floor 2" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2.5)
 
-[node name="Ewall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53672e-07, 0, 10.3)
+[node name="Ramp" type="CSGPolygon3D" parent="NavigationRegion3D/Floor 2"]
+transform = Transform3D(10.7628, -4.22886e-07, 1.08652e-14, -9.4091e-07, -4.83725, 4.94603e-07, -4.11285e-14, -4.22886e-07, -5.6576, 9, -2, -6)
 use_collision = true
-size = Vector3(17.8, 4, 0.25)
-material = ExtResource("1_ppfyb")
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 1)
+material = SubResource("StandardMaterial3D_y1al3")
 
-[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Ewall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.9, -0.0499992)
-operation = 2
-size = Vector3(2, 2.2, 1.3)
+[node name="Ewall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47359e-06, 0, 10.9)
+use_collision = true
+size = Vector3(17, 4, 0.5)
+material = ExtResource("1_ppfyb")
 
 [node name="Wwall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249985, 0, -17.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249996, 0, -17.2)
 use_collision = true
-size = Vector3(17.8, 4, 0.25)
+size = Vector3(17.1, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
-[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Wwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.85, -0.5)
-operation = 2
-size = Vector3(2, 2.3, 2.2)
-
 [node name="Swall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, -3.15)
 use_collision = true
-size = Vector3(0.25, 4, 27.7)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
 
 [node name="Entrance" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, -3.15)
 use_collision = true
-size = Vector3(0.25, 4, 28.2)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Entrance"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.08165e-12, -1, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Entrance"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, -1, 0.1)
 operation = 2
-use_collision = true
 size = Vector3(1.5, 2, 1)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="NavigationRegion3D/Floor 2/Entrance"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, 0, 0, 0.1)
 operation = 2
-use_collision = true
 radius = 0.75
 height = 1.0
 sides = 64
 
-[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, -3.3)
+[node name="Floor2" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53672e-07, 1.5, -3.15)
 use_collision = true
-size = Vector3(18, 1, 27.6)
+size = Vector3(17, 1, 27.6)
 material = ExtResource("3_qagxy")
 
-[node name="Stair_opening" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Floor"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, -1.5246e-23, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -6.25, 2.08165e-12, 12.5)
+[node name="Stair_opening" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Floor2"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, -1.5246e-23, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 6, 0, 12)
 gi_mode = 0
 operation = 2
-size = Vector3(2, 4.5, 1)
+size = Vector3(2, 2, 2)
 
-[node name="Ramp" type="CSGPolygon3D" parent="NavigationRegion3D/Floor 2"]
-transform = Transform3D(9.78432, -4.22886e-07, 1.08652e-14, -8.55373e-07, -4.83725, 4.94603e-07, -3.73895e-14, -4.22886e-07, -5.6576, 9.45347, -1.97901, -6)
-use_collision = true
-polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 1)
-material = SubResource("StandardMaterial3D_y1al3")
+[node name="LRoom" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
+transform = Transform3D(-0.996195, 9.78221e-25, -0.0871558, 0, 1, -1.12238e-23, 0.0871558, 1.11811e-23, -0.996195, 5.525, 0, -6.2)
+size = Vector3(6, 3.999, 0.5)
+
+[node name="Doorway" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/LRoom"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 3.1, 0, 5.475)
+size = Vector3(11.4, 3.999, 0.5)
+
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/LRoom/Doorway"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, -0.75, 0.0999999)
+gi_mode = 0
+operation = 2
+size = Vector3(2, 2.5, 1)
+
+[node name="Doorway" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -3.9, 0, -3.175)
+size = Vector3(27.7, 3.999, 0.5)
+
+[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Doorway"]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, -0.75, 0.0999999)
+gi_mode = 0
+operation = 2
+size = Vector3(2, 2.5, 1)
 
 [node name="West Hall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 13)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="West Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 6.6)
 use_collision = true
-size = Vector3(0.25, 12, 12)
+size = Vector3(0.5, 12, 11.9)
 material = SubResource("StandardMaterial3D_arukg")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="West Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 6.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 6.55)
 use_collision = true
-size = Vector3(0.25, 12, 12.6)
+size = Vector3(0.5, 12, 11.9)
 material = ExtResource("10_rkhrh")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="West Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0, 12.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, 0, 12.25)
 use_collision = true
-size = Vector3(18, 12, 0.25)
+size = Vector3(17, 12, 0.5)
 material = ExtResource("11_7jnk1")
 
 [node name="Roof" type="CSGBox3D" parent="West Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.5, 6.15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, 5.5, 6.325)
 use_collision = true
-size = Vector3(18, 1, 12.25)
+size = Vector3(17, 1, 11.5)
 
 [node name="Floor" type="CSGBox3D" parent="West Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, -2.5, 6.3)
 use_collision = true
-size = Vector3(18, 1, 11)
+size = Vector3(17, 1, 11.4)
 material = ExtResource("3_qagxy")
 
 [node name="East Hall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -26)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="East Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5.65)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.75, 0, 5.07)
 use_collision = true
-size = Vector3(0.25, 12, 11.3)
-material = ExtResource("10_rkhrh")
+size = Vector3(0.5, 12, 12)
+material = SubResource("StandardMaterial3D_arukg")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="East Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 5.65)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.75, 0, 5.07)
 use_collision = true
-size = Vector3(0.25, 12, 11.3)
+size = Vector3(0.5, 12, 12)
 material = ExtResource("10_rkhrh")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="East Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.5)
+[node name="CSGBox3D3" type="CSGBox3D" parent="East Hall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.07829e-07, 0, -0.680002)
 use_collision = true
-size = Vector3(17.5, 12, 0.25)
+size = Vector3(17, 12, 0.5)
 material = ExtResource("11_7jnk1")
 
 [node name="Roof" type="CSGBox3D" parent="East Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.5, 6.05)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14522e-07, 5.5, 5.295)
 use_collision = true
-size = Vector3(18, 1, 11.1)
+size = Vector3(17, 1, 11.6)
 
-[node name="Foor" type="CSGBox3D" parent="East Hall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 5.9)
+[node name="Floor" type="CSGBox3D" parent="East Hall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.12336e-07, -2.5, 5.27)
 use_collision = true
-size = Vector3(18, 1, 10.6)
+size = Vector3(17, 1, 11.4)
 material = ExtResource("3_qagxy")
 
 [node name="Floor 3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 13)
 
-[node name="Ewall" type="CSGBox3D" parent="Floor 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53672e-07, 0, -0.0999994)
+[node name="Roof" type="CSGBox3D" parent="Floor 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, -13.65)
 use_collision = true
-size = Vector3(17.8, 4, 0.25)
+size = Vector3(17, 1, 27.7)
+
+[node name="Ewall" type="CSGBox3D" parent="Floor 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47359e-06, 0, 0.399997)
+use_collision = true
+size = Vector3(17, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
 [node name="Wwall" type="CSGBox3D" parent="Floor 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249998, -0.5, -27.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249996, 0, -27.7)
 use_collision = true
-size = Vector3(17.7, 3, 0.25)
+size = Vector3(17.1, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
 [node name="Swall" type="CSGBox3D" parent="Floor 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -13.85)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, -13.65)
 use_collision = true
-size = Vector3(0.25, 4, 27.7)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
 
 [node name="Entrance" type="CSGBox3D" parent="Floor 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -13.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, -13.65)
 use_collision = true
-size = Vector3(0.25, 4, 28.2)
+size = Vector3(0.5, 4, 28.6)
 material = ExtResource("2_1ovg0")
-
-[node name="Floor" type="CSGBox3D" parent="Floor 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, -13.8)
-use_collision = true
-size = Vector3(17.75, 1, 27.2)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w6ghh")
