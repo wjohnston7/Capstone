@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c6is31p6d0tna"]
+[gd_scene load_steps=30 format=3 uid="uid://c6is31p6d0tna"]
 
 [ext_resource type="Material" uid="uid://dt3nhl0gkm7bo" path="res://Material/Wall2.tres" id="1_ppfyb"]
 [ext_resource type="Material" uid="uid://dqglrdntb83co" path="res://Material/Wall.tres" id="2_1ovg0"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cgavwgrq5cain" path="res://textures/brick_pavement_rough_4k.png" id="6_csi4x"]
 [ext_resource type="Texture2D" uid="uid://cy2opp610lrc3" path="res://textures/cracked_concrete_wall_diff_4k.png" id="7_sd1ik"]
 [ext_resource type="Texture2D" uid="uid://ogc3yon7jhup" path="res://textures/cracked_concrete_wall_nor_gl_4k.png" id="8_lfbbq"]
+[ext_resource type="Script" path="res://Script/Elevator2.gd" id="8_ncu50"]
+[ext_resource type="PackedScene" uid="uid://cg7ywsc3e0dxc" path="res://Scene/zach_jones.tscn" id="9_agcvk"]
 [ext_resource type="Texture2D" uid="uid://cy6416p1lpkfe" path="res://textures/cracked_concrete_wall_rough_4k.png" id="9_eo48b"]
 [ext_resource type="Material" uid="uid://s7l7c01qshgl" path="res://Material/Wall4.tres" id="10_rkhrh"]
 [ext_resource type="Material" uid="uid://0mgwrb15xlhu" path="res://Material/Wall3.tres" id="11_7jnk1"]
@@ -26,7 +28,7 @@ size = Vector3(2, 0.25, 2)
 
 [sub_resource type="Animation" id="Animation_f5uj1"]
 resource_name = "up"
-length = 6.0
+length = 9.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,7 +37,7 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6),
+"times": PackedFloat32Array(0, 4.5, 9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(9.53672e-07, 1.5, -13.65), Vector3(2.08165e-12, 5.25, -13.65), Vector3(9.53672e-07, 1.5, -13.65)]
@@ -55,6 +57,34 @@ roughness_texture = ExtResource("6_csi4x")
 normal_enabled = true
 normal_texture = ExtResource("5_pptao")
 uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7tnq"]
+size = Vector3(2, 0.25, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_daljs"]
+size = Vector3(2, 0.25, 2)
+
+[sub_resource type="Animation" id="Animation_ju5mg"]
+resource_name = "Up"
+length = 9.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(6, -3, 12), Vector3(6, 0.75, 12), Vector3(6, -3, 12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u68wv"]
+_data = {
+"Up": SubResource("Animation_ju5mg")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arukg"]
 albedo_texture = ExtResource("7_sd1ik")
@@ -146,8 +176,11 @@ gi_mode = 0
 operation = 2
 size = Vector3(2, 2, 2)
 
+[node name="Zach Jones" parent="NavigationRegion3D/Ground-level/Floor1" instance=ExtResource("9_agcvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53672e-07, 1.51927, 3.15)
+
 [node name="Elevator" type="AnimatableBody3D" parent="NavigationRegion3D/Ground-level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01982e-07, 2.48969, -13.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17892e-07, 4, -13.65)
 script = ExtResource("4_58faw")
 
 [node name="collision shape" type="CollisionShape3D" parent="NavigationRegion3D/Ground-level/Elevator"]
@@ -216,11 +249,21 @@ use_collision = true
 size = Vector3(17, 4, 0.5)
 material = ExtResource("1_ppfyb")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Ewall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50208, -0.764779, 0)
+operation = 2
+size = Vector3(2, 2.5, 1)
+
 [node name="Wwall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249996, 0, -17.2)
 use_collision = true
 size = Vector3(17.1, 4, 0.5)
 material = ExtResource("1_ppfyb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Floor 2/Wwall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48129, -0.764779, 0)
+operation = 2
+size = Vector3(2, 2.5, 1)
 
 [node name="Swall" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, -3.15)
@@ -257,6 +300,22 @@ transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, -1.5246e-23, -4.37114e-08
 gi_mode = 0
 operation = 2
 size = Vector3(2, 2, 2)
+
+[node name="Elevator2" type="AnimatableBody3D" parent="NavigationRegion3D/Floor 2/Floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, 12)
+script = ExtResource("8_ncu50")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor 2/Floor2/Elevator2"]
+shape = SubResource("BoxShape3D_t7tnq")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D/Floor 2/Floor2/Elevator2/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.375, 2.08165e-12)
+mesh = SubResource("BoxMesh_daljs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/Floor 2/Floor2/Elevator2/CollisionShape3D"]
+libraries = {
+"": SubResource("AnimationLibrary_u68wv")
+}
 
 [node name="LRoom" type="CSGBox3D" parent="NavigationRegion3D/Floor 2"]
 transform = Transform3D(-0.996195, 9.78221e-25, -0.0871558, 0, 1, -1.12238e-23, 0.0871558, 1.11811e-23, -0.996195, 5.525, 0, -6.2)
