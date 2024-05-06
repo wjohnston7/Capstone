@@ -89,6 +89,7 @@ shape = SubResource("BoxShape3D_bkgm0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7.4, -11)
 
 [connection signal="death" from="Player" to="." method="_on_player_death"]
+[connection signal="death" from="Player" to="Zach Jones" method="_on_player_death"]
 [connection signal="body_entered" from="Ending Signal" to="." method="_on_ending_signal_body_entered"]
 [connection signal="body_exited" from="Ending Signal" to="." method="_on_ending_signal_body_exited"]
 [connection signal="timeout" from="Ending timer" to="." method="_on_ending_timer_timeout"]

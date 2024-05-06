@@ -34,3 +34,7 @@ func _on_area_3d_body_exited(body):
 	if body.is_in_group("player"):
 		state = "idle"
 		target = randf_range(-7, 7)
+
+
+func _on_player_death():
+	queue_free()
