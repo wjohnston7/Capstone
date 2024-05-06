@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var clue_counter = 0
 @export var beer_counter = 0
 
-
+signal death
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -99,3 +99,11 @@ func _on_fall_damage_timeout():
 
 func kill():
 	print("i am dead")
+	#var death = load("res://Scene/bad_ending.tscn")
+	#add_child(death)
+	emit_signal("death")
+
+
+func _on_area_3d_body_entered(body):
+	if body.is_in_group("enemy"):
+		kill()

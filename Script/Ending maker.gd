@@ -11,6 +11,9 @@ const good_txt = preload("res://Scene/good_ending.tscn")
 func _ready(): 
 	freeman.position = Vector3(0., 0., 0.)
 	add_child(freeman)
+	var emitter = get_node("Player")
+	emitter.connect("custom_signal", self, "_on_custom_signal")
+
 
 
 func _on_beer_body_entered(body):
@@ -44,22 +47,22 @@ func _on_flyer_3_body_entered(body):
 		clue_counter += 1
 
 
-func _on_ending_signal_body_entered(body):
-	if body.is_in_group("player") and beer_counter < 6:
-		var bad_ending = ending_bad.instantiate()
-		add_child(bad_ending)
-		remove_child(freeman)
-		$"Ending timer".start()
-	elif body.is_in_group("player") and clue_counter < 3:
-		var bad_ending = ending_bad.instantiate()
-		add_child(bad_ending)
-		remove_child(freeman)
-		$"Ending timer".start()
-	elif body.is_in_group("player") and beer_counter >= 6 and clue_counter >= 3:
-		var good_ending = ending_good.instantiate()
-		add_child(good_ending)
-		remove_child(freeman)
-		$"Ending timer".start()
+#func _on_ending_signal_body_entered(body):
+	#if body.is_in_group("player") and beer_counter < 6:
+		#var bad_ending = ending_bad.instantiate()
+		#add_child(bad_ending)
+		#remove_child(freeman)
+		#$"Ending timer".start()
+	#elif body.is_in_group("player") and clue_counter < 3:
+		#var bad_ending = ending_bad.instantiate()
+		#add_child(bad_ending)
+		#remove_child(freeman)
+		#$"Ending timer".start()
+	#elif body.is_in_group("player") and beer_counter >= 6 and clue_counter >= 3:
+		#var good_ending = ending_good.instantiate()
+		#add_child(good_ending)
+		#remove_child(freeman)
+		#$"Ending timer".start()
 
 
 
