@@ -1,15 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c2gyj3067ty5i"]
-
-[ext_resource type="Texture2D" uid="uid://lypltuxv4ldd" path="res://textures/metal_grate_rusty_diff_4k.png" id="1_jywyc"]
-[ext_resource type="Texture2D" uid="uid://sk2ab3xnwg08" path="res://textures/metal_grate_rusty_metal_4k.png" id="2_pa7aj"]
-[ext_resource type="Texture2D" uid="uid://dodr8qpmgwtyw" path="res://textures/metal_grate_rusty_nor_gl_4k.png" id="3_5olxc"]
-[ext_resource type="Texture2D" uid="uid://cpmaq2u0a6jcx" path="res://textures/metal_grate_rusty_rough_4k.png" id="4_7tdgg"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2gyj3067ty5i"]
 
 [resource]
-albedo_texture = ExtResource("1_jywyc")
 metallic = 1.0
-metallic_texture = ExtResource("2_pa7aj")
-roughness_texture = ExtResource("4_7tdgg")
 normal_enabled = true
-normal_texture = ExtResource("3_5olxc")
 uv1_scale = Vector3(3, 2, 1)

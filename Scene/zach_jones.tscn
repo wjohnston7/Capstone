@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" path="res://Script/zach_jones.gd" id="1_yf52q"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yuul6"]
-radius = 0.001
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdxxl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dij0l"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u3i0p"]
-radius = 5.0
+radius = 3.0
 
 [node name="Zach Jones" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_yf52q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_yuul6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+shape = SubResource("BoxShape3D_mdxxl")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 mesh = SubResource("CapsuleMesh_dij0l")
@@ -27,4 +27,3 @@ mesh = SubResource("CapsuleMesh_dij0l")
 shape = SubResource("CylinderShape3D_u3i0p")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -2,10 +2,10 @@ extends CharacterBody3D
 
 @onready var camera_3D = $Neck/Camera3D
 @onready var neck = $Neck
-@export var clue_counter = 0
 @export var beer_counter = 0
 
 signal death
+signal fall
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -16,7 +16,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		if velocity.y < -14:
-			kill()
+			_fall()
 		#$"fall damage".start()
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -45,21 +45,6 @@ func _input(event):
 		camera_3D.rotate_x(-event.relative.y*.001)
 		neck.rotate_y(-event.relative.x*.001)
 		camera_3D.rotation.x = clamp(camera_3D.rotation.x, deg_to_rad(-60), deg_to_rad(60))
-
-
-func _on_flyer_body_entered(body):
-	if body.is_in_group("player"):
-		clue_counter += 1
-
-
-func _on_flyer_2_body_entered(body):
-	if body.is_in_group("player"):
-		clue_counter += 1
-
-
-func _on_flyer_3_body_entered(body):
-	if body.is_in_group("player"):
-		clue_counter += 1
 
 
 func _on_beer_body_entered(body):
@@ -94,15 +79,17 @@ func _on_beer_6_body_entered(body):
 
 
 func _on_fall_damage_timeout():
-	kill()
+	emit_signal("fall")
+	$"fall damage".queue_free()
 
 
 func kill():
-	print("i am dead")
-	#var death = load("res://Scene/bad_ending.tscn")
-	#add_child(death)
 	emit_signal("death")
-
+	return
+	
+func _fall():
+	emit_signal("fall")
+	return
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("enemy"):

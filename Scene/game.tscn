@@ -1,15 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0rner48viwr2"]
+[gd_scene load_steps=12 format=3 uid="uid://c0rner48viwr2"]
 
 [ext_resource type="Script" path="res://Script/game.gd" id="1_6ca0t"]
-[ext_resource type="Texture2D" uid="uid://rfq06glbchdb" path="res://textures/snow_05_diff_4k.png" id="1_jgu6m"]
-[ext_resource type="Texture2D" uid="uid://b4x4npf3x546w" path="res://textures/snow_05_nor_gl_4k.png" id="2_ohng6"]
-[ext_resource type="Texture2D" uid="uid://cbhvu21huqgiv" path="res://textures/snow_05_rough_4k.png" id="3_li42x"]
+[ext_resource type="Texture2D" uid="uid://dkcyc2i7s2wpy" path="res://textures/snow_05_diff_4k.png" id="1_jgu6m"]
+[ext_resource type="Texture2D" uid="uid://c1ldjbl3x2jns" path="res://textures/snow_05_nor_gl_4k.png" id="2_ohng6"]
+[ext_resource type="Texture2D" uid="uid://dp2kl8lkciccg" path="res://textures/snow_05_rough_4k.png" id="3_li42x"]
 [ext_resource type="PackedScene" uid="uid://j5m0vfurmt4s" path="res://Scene/player.tscn" id="4_g37it"]
 [ext_resource type="PackedScene" uid="uid://udkkb7esabs6" path="res://Scene/beer.tscn" id="5_wj2ol"]
-[ext_resource type="PackedScene" uid="uid://c8aror203rtyp" path="res://Scene/flyer1.tscn" id="6_0cbsy"]
 [ext_resource type="PackedScene" uid="uid://cfsjp6n5ourhj" path="res://Scene/beer_counter.tscn" id="8_4sw0s"]
-[ext_resource type="PackedScene" uid="uid://cxkju8n2knkp8" path="res://Scene/flyer_2.tscn" id="9_6xgui"]
-[ext_resource type="PackedScene" uid="uid://dlgght1rq7wyl" path="res://Scene/flyer_3.tscn" id="10_4n0n7"]
 [ext_resource type="PackedScene" uid="uid://cg7ywsc3e0dxc" path="res://Scene/zach_jones.tscn" id="12_lrn2b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvqfj"]
@@ -29,7 +26,7 @@ size = Vector3(2, 2.2, 1.3)
 script = ExtResource("1_6ca0t")
 
 [node name="Player" parent="." instance=ExtResource("4_g37it")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4671, 7.13593, -6.8412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5329, -0.686166, 0.1588)
 
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -2.5, 4.1633e-12)
@@ -52,31 +49,22 @@ wait_time = 5.0
 [node name="Countables" type="Node3D" parent="."]
 
 [node name="Beer" parent="Countables" instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -5.28683, 2, -10.7762)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -7.58683, 2, 8.3238)
 
 [node name="Beer2" parent="Countables" instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -2.69377, 2, -11.6801)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -2.69377, 6, -11.6801)
 
 [node name="Beer3" parent="Countables" instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 12.9646, -2, -9.76219)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 2.9646, -2, -5.66219)
 
 [node name="Beer4" parent="Countables" instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0.4, 6, -7)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -4.1, 6, 11.5)
 
 [node name="Beer5" parent="Countables" instance=ExtResource("5_wj2ol")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 2, 2, 9)
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 5, 2, -10)
 
 [node name="Beer6" parent="Countables" instance=ExtResource("5_wj2ol")]
 transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, -7.2, -2, -11)
-
-[node name="Flyer" parent="Countables" instance=ExtResource("6_0cbsy")]
-transform = Transform3D(-1.74846e-07, 1.39515e-15, 4, 1.39515e-15, 4, -1.39515e-15, -4, 1.39515e-15, -1.74846e-07, 9.52042, -0.56312, -9.2949)
-
-[node name="flyer2" parent="Countables" instance=ExtResource("9_6xgui")]
-transform = Transform3D(-1.74846e-07, 1.39515e-15, 4, 1.39515e-15, 4, -1.39515e-15, -4, 1.39515e-15, -1.74846e-07, -8.5, -0.7, -11)
-
-[node name="flyer3" parent="Countables" instance=ExtResource("10_4n0n7")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.6, 3, 12.5)
 
 [node name="Ending Signal 2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 3, -16)
@@ -86,10 +74,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.299999)
 shape = SubResource("BoxShape3D_bkgm0")
 
 [node name="Zach Jones" parent="." instance=ExtResource("12_lrn2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7.4, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 7, 4.8)
+
+[node name="Zach Jones2" parent="." instance=ExtResource("12_lrn2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 3, 11.1)
+
+[node name="Zach Jones3" parent="." instance=ExtResource("12_lrn2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -0.9, -8.7)
 
 [connection signal="death" from="Player" to="." method="_on_player_death"]
-[connection signal="death" from="Player" to="Zach Jones" method="_on_player_death"]
+[connection signal="fall" from="Player" to="." method="_on_player_fall"]
 [connection signal="body_entered" from="Ending Signal" to="." method="_on_ending_signal_body_entered"]
 [connection signal="body_exited" from="Ending Signal" to="." method="_on_ending_signal_body_exited"]
 [connection signal="timeout" from="Ending timer" to="." method="_on_ending_timer_timeout"]
@@ -117,10 +111,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7.4, -11)
 [connection signal="body_entered" from="Countables/Beer6" to="Player" method="_on_beer_6_body_entered"]
 [connection signal="body_entered" from="Countables/Beer6" to="Beer Counter" method="_on_beer_6_body_entered"]
 [connection signal="body_entered" from="Countables/Beer6" to="Countables/Beer6" method="_on_body_entered"]
-[connection signal="body_entered" from="Countables/Flyer" to="." method="_on_flyer_body_entered"]
-[connection signal="body_entered" from="Countables/Flyer" to="Player" method="_on_flyer_body_entered"]
-[connection signal="body_entered" from="Countables/flyer2" to="." method="_on_flyer_2_body_entered"]
-[connection signal="body_entered" from="Countables/flyer2" to="Player" method="_on_flyer_2_body_entered"]
-[connection signal="body_entered" from="Countables/flyer3" to="." method="_on_flyer_3_body_entered"]
-[connection signal="body_entered" from="Countables/flyer3" to="Player" method="_on_flyer_3_body_entered"]
 [connection signal="body_entered" from="Ending Signal 2" to="." method="_on_ending_signal_2_body_entered"]

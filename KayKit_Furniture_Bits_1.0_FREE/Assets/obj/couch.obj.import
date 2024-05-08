@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csrc1qvvu8jdj"
+path="res://.godot/imported/couch.obj-4feebfe2f96d830b392a5189c8ad412a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/couch.obj-4feebfe2f96d830b392a5189c8ad412a.mesh"]
+
+source_file="res://KayKit_Furniture_Bits_1.0_FREE/Assets/obj/couch.obj"
+dest_files=["res://.godot/imported/couch.obj-4feebfe2f96d830b392a5189c8ad412a.mesh", "res://.godot/imported/couch.obj-4feebfe2f96d830b392a5189c8ad412a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
