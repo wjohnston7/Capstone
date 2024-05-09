@@ -32,22 +32,26 @@ layout_mode = 2
 [node name="Play" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
 text = "Play"
 expand_icon = true
 
 [node name="Credits" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
 text = "Credits"
 
 [node name="Info" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
 text = "Info"
 
 [node name="Quit" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
