@@ -22,9 +22,14 @@ follow_viewport_enabled = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -78.0
+offset_right = 350.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Dang... you acidentally interrupted a debate meeting :(
+text = "GAME OVER
+Dang... you acidentally interrupted a debate meeting :(
 Now you've been insulted in more ways than you can know."
 label_settings = SubResource("LabelSettings_crgix")
 horizontal_alignment = 1

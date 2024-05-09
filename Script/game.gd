@@ -14,6 +14,18 @@ func _ready():
 	freeman.position = Vector3(0., 0., 0.)
 	add_child(freeman)
 
+func bad_ending():
+	var b_end = ending_bad.instantiate()
+	add_child(b_end)
+	remove_child(freeman)
+	return
+
+
+func good_ending():
+	var g_end = ending_good.instantiate()
+	add_child(g_end)
+	remove_child(freeman)
+	return
 
 
 func _on_beer_body_entered(body):
@@ -38,29 +50,11 @@ func _on_beer_6_body_entered(body):
 
 func _on_ending_signal_body_entered(body): #change bad ending to lessthan6pack ending
 	if body.is_in_group("player") and beer_counter < 6:
-		var bad_ending = ending_bad.instantiate()
-		add_child(bad_ending)
-		remove_child(freeman)
+		bad_ending()
 		$"Ending timer".start()
-		$"Zach Jones".queue_free()
-		$"Zach Jones2".queue_free()
-		$"Zach Jones3".queue_free()
-	elif body.is_in_group("player"):
-		var bad_ending = ending_bad.instantiate()
-		add_child(bad_ending)
-		remove_child(freeman)
-		$"Ending timer".start()
-		$"Zach Jones".queue_free()
-		$"Zach Jones2".queue_free()
-		$"Zach Jones3".queue_free()
 	elif body.is_in_group("player") and beer_counter >= 6:
-		var good_ending = ending_good.instantiate()
-		add_child(good_ending)
-		remove_child(freeman)
+		good_ending()
 		$"Ending timer".start()
-		$"Zach Jones".queue_free()
-		$"Zach Jones2".queue_free()
-		$"Zach Jones3".queue_free()
 
 
 func _on_ending_signal_body_exited(body):
@@ -70,27 +64,17 @@ func _on_ending_signal_body_exited(body):
 
 func _on_ending_signal_2_body_entered(body):
 	if body.is_in_group("player"):
-		var bad_ending = ending_bad.instantiate()
-		add_child(bad_ending)
-		remove_child(freeman)
+		bad_ending()
 		var bLoc = bLoc_txt.instantiate()
 		add_child(bLoc)
-		$"Zach Jones".queue_free()
-		$"Zach Jones2".queue_free()
-		$"Zach Jones3".queue_free()
-	return
+		return
 
 
 
 func _on_player_death():
-	var bad_ending = ending_bad.instantiate()
-	add_child(bad_ending)
-	remove_child(freeman)
+	bad_ending()
 	var ZJ = ZJ_txt.instantiate()
 	add_child(ZJ)
-	$"Zach Jones".queue_free()
-	$"Zach Jones2".queue_free()
-	$"Zach Jones3".queue_free()
 	return 
 
 
@@ -101,9 +85,6 @@ func _on_ending_timer_timeout():
 	else:
 		var good_text = good_txt.instantiate()
 		add_child(good_text)
-	$"Zach Jones".queue_free()
-	$"Zach Jones2".queue_free()
-	$"Zach Jones3".queue_free()
 	return
 
 

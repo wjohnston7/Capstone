@@ -24,7 +24,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "YO DUDE! Where's your 6 pack?? The meeting's gonna suck now... let's leave"
+text = "GAME OVER
+YO DUDE! Where's your 6 pack?? The meeting's gonna suck now... let's leave"
 label_settings = SubResource("LabelSettings_o4ljc")
 horizontal_alignment = 1
 vertical_alignment = 1

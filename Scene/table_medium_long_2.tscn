@@ -1,13 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5offkiooaaej"]
+[gd_scene load_steps=9 format=3 uid="uid://b5offkiooaaej"]
 
-[ext_resource type="Texture2D" uid="uid://cidftmondk735" path="res://KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/furniturebits_texture.png" id="1_lsdnp"]
-[ext_resource type="Texture2D" uid="uid://d0wvwlydayn8a" path="res://textures/oak_veneer_01_diff_4k.png" id="2_xlgx0"]
-[ext_resource type="Texture2D" uid="uid://bwtvx28b8658h" path="res://textures/oak_veneer_01_nor_gl_4k.png" id="3_let5k"]
-[ext_resource type="Texture2D" uid="uid://b2x6cp4diavfu" path="res://textures/oak_veneer_01_rough_4k.png" id="4_ldx0v"]
+[ext_resource type="Texture2D" uid="uid://d0wvwlydayn8a" path="res://textures/furniture/oak_veneer_01_diff_4k.png" id="2_xlgx0"]
+[ext_resource type="Texture2D" uid="uid://bwtvx28b8658h" path="res://textures/furniture/oak_veneer_01_nor_gl_4k.png" id="3_let5k"]
+[ext_resource type="Texture2D" uid="uid://b2x6cp4diavfu" path="res://textures/furniture/oak_veneer_01_rough_4k.png" id="4_ldx0v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnyah"]
 resource_name = "furniture_texture"
-albedo_texture = ExtResource("1_lsdnp")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k835t"]
@@ -57,7 +55,6 @@ disable_mode = 1
 
 [node name="table_medium_long" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_5nsvu")
-skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_421jl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

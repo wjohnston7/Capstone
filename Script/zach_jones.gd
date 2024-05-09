@@ -34,3 +34,17 @@ func _on_area_3d_body_entered(body):
 
 func _on_player_death():
 	queue_free()
+
+
+func _on_ending_timer_timeout():
+	queue_free()
+
+
+func _on_ending_signal_body_entered(body):
+	if body.is_in_group("player"):
+		queue_free()
+
+
+func _on_ending_signal_2_body_entered(body):
+	if body.is_in_group("player"):
+		queue_free()

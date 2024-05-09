@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://udkkb7esabs6"]
 
-[ext_resource type="ArrayMesh" uid="uid://btib15bhhfyx3" path="res://16_oz._Beer_Bottle_v2_L1.123c32efbc2b-29fa-47b3-bc1c-77340cb7b490/14043_16_oz_Beer_Bottle_v2_L1.obj" id="1_6fk03"]
+[ext_resource type="ArrayMesh" uid="uid://btib15bhhfyx3" path="res://obj/beer/14043_16_oz_Beer_Bottle_v2_L1.obj" id="1_6fk03"]
 [ext_resource type="Script" path="res://Script/beer.gd" id="1_wn8x0"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i7s2g"]

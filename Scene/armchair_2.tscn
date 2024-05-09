@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1ppjcg2ojxvq"]
+[gd_scene load_steps=7 format=3 uid="uid://b1ppjcg2ojxvq"]
 
-[ext_resource type="Texture2D" uid="uid://cidftmondk735" path="res://KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/furniturebits_texture.png" id="1_bofvf"]
-[ext_resource type="Texture2D" uid="uid://dk82upr75k05b" path="res://textures/fabric_leather_02_diff_4k.png" id="2_hbmgo"]
+[ext_resource type="Texture2D" uid="uid://dk82upr75k05b" path="res://textures/armchair/fabric_leather_02_diff_4k.png" id="2_hbmgo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prxdw"]
 resource_name = "furniture_texture"
-albedo_texture = ExtResource("1_bofvf")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xpail"]

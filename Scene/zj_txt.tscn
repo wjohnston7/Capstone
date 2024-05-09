@@ -22,9 +22,14 @@ follow_viewport_enabled = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -568.0
+offset_top = -80.0
+offset_right = 568.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Uh oh... you got caught in some boring convo about analytical philosophy. 
+text = "GAME OVER
+Uh oh... you got caught in some boring convo about analytical philosophy. 
 You're never gonna make the meeting!"
 label_settings = SubResource("LabelSettings_crgix")
 horizontal_alignment = 1

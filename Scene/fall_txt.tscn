@@ -22,9 +22,14 @@ follow_viewport_enabled = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -76.0
+offset_right = 185.0
+offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You fell?!?!?! Dang get some help... (718) 817-2222"
+text = "GAME OVER
+You fell?!?!?! Dang get some help... (718) 817-2222"
 label_settings = SubResource("LabelSettings_crgix")
 horizontal_alignment = 1
 vertical_alignment = 1

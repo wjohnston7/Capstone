@@ -23,6 +23,7 @@ mesh = SubResource("CapsuleMesh_lk7s8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32032, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+fov = 80.0
 
 [node name="fall damage" type="Timer" parent="."]
 wait_time = 2.0
